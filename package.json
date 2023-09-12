@@ -5,7 +5,7 @@
   "main": "./src/index.js",
   "description": "A development server with live reload enabled, allows you to see updates to your file changes in realtime ",
   "scripts": {
-    "test": ""
+    "test": "node example/example.config -w"
   },
   "keywords": [
     "live",
@@ -19,9 +19,11 @@
   "author": "ojolowoblue",
   "license": "ISC",
   "dependencies": {
+    "chokidar": "^3.5.3",
     "create-serve": "^1.0.1",
     "esbuild": "^0.19.2"
   },
+  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ojolowoblue/esbuild-live-server.git"
