@@ -62,4 +62,10 @@ Then run
     npm run dev
 ```
 
+### Example Project that implements this package
+
+```
+   https://github.com/ojolowoblue/react-app-minifier
+```
+
 ### Thank You
