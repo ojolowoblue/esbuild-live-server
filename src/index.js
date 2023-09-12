@@ -1,14 +1,12 @@
 import esbuild from "esbuild";
-import server, { log, update } from "create-serve";
-import chokidar from "chokidar";
+import server from "create-serve";
 
 const isWatchMode =
   process.argv.includes("--watch") || process.argv.includes("-w");
 
 const serveWithEsbuild = async (
   options = {},
-  serverOptions = { root: ".", port: 4000 },
-  watchDir = "."
+  serverOptions = { root: ".", port: 4000 }
 ) => {
   const buildResult = await esbuild
     .context({
@@ -19,25 +17,9 @@ const serveWithEsbuild = async (
   if (isWatchMode) {
     server.start(serverOptions);
 
-    const watcher = chokidar.watch(watchDir, {
-      ignored: /(^|[\/\\])\../, // ignore dot files like e.g .env
-      persistent: true,
-    });
-
-    watcher.on("all", (ev, path) => {
-      update(`Updating changes -> ${path}`);
-      buildResult.rebuild().catch((err) => {
-        server.update();
-        log(err);
-      });
-    });
-
-    watcher.on("error", (error) => log(error));
-
     buildResult.watch().then(() => {
       buildResult.rebuild().catch((err) => {
         server.update();
-        log(err);
       });
     });
   } else {
