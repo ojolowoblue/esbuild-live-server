@@ -5,7 +5,7 @@
   "main": "./src/index.js",
   "description": "A development server with live reload enabled, allows you to see updates to your file changes in realtime ",
   "scripts": {
-    "test": "node example/example.config -w"
+    "test": ""
   },
   "keywords": [
     "live",
