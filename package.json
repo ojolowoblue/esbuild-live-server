@@ -1,7 +1,7 @@
 {
   "name": "esbuild-live-server",
   "type": "module",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "main": "./src/index.js",
   "description": "A development server with live reload enabled, allows you to see updates to your file changes in realtime ",
   "scripts": {
