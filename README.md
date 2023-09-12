@@ -30,7 +30,7 @@ import EsbuildServer from "esbuild-live-server"
     }, {
         // Server Config
         port: 4000,
-        root: "./public", // path to the folder you want to sere
+        root: "./public", // path to the folder you want to serve
     });
 ```
 
